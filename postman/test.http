@@ -1,0 +1,5 @@
+### GET 
+GET http://localhost:8080/fix/get?key=key1
+
+### Increase 
+GET http://localhost:8080/fix/increase?key=key1
