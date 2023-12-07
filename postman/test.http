@@ -3,3 +3,11 @@ GET http://localhost:8080/fix/get?key=key1
 
 ### Increase 
 GET http://localhost:8080/fix/increase?key=key1
+
+
+### Sliding window counter
+### GET 
+GET http://localhost:8080/sliding/get?key=key1
+
+### Increase 
+GET http://localhost:8080/sliding/increase?key=key1

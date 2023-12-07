@@ -36,5 +36,24 @@ public class Helper {
         return curTime - 1 + "";
     }
 
+    public double getCurrentPercentage(String curPrefixTimestamp){
+        long curTime = System.currentTimeMillis();
+        if(Constant.UNIT == TimeUnit.MINUTES){
+            // minutes
+            long prefixMs = Long.parseLong(curPrefixTimestamp) * 60 * 1000;
+            double curPercentage = 1.0 *(curTime - prefixMs) / (60 * 1000);
 
+            return curPercentage;
+        }else if (Constant.UNIT == TimeUnit.SECONDS){
+            // seconds
+            long prefixMs = Long.parseLong(curPrefixTimestamp) * 1000;
+            double curPercentage = 1.0 *(curTime - prefixMs) / 1000;
+            return curPercentage;
+        }
+        return 1;
+    }
+
+    public String buildRedisKey(String timestamp, String key){
+        return String.format("%s:%s", timestamp, key);
+    }
 }

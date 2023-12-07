@@ -17,7 +17,7 @@ public class RestExceptionHandler {
             = { TooManyException.class})
     protected ResponseEntity<Object> tooManyRequestException(
             RuntimeException ex) {
-        log.error(ex.getMessage(), ex);
+//        log.error(ex.getMessage(), ex);
         Map<String, Object> body = new HashMap<>();
         body.put("message", ex.getMessage());
         return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(body);
